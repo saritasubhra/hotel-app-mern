@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@layer components {
+  .input {
+    @apply block w-full mt-1 px-4 py-2  border-2 border-gray-300 rounded-md;
+  }
+}
+
+.active {
+  border-bottom: 3px solid #916e27;
+  padding-bottom: 5px;
+  font-weight: 600;
+}
