@@ -4,10 +4,10 @@ import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 
 function RoomDetails() {
-  const { _id, name, price, image, capacity, bed, area, description } = room;
+  const { name, price, image, capacity, bed, area, description } = room;
   return (
-    <>
-      <div className="max-w-6xl mx-auto grid grid-cols-2 gap-8 mb-16">
+    <div className="py-10 px-10 max-w-7xl mx-auto">
+      <div className=" grid grid-cols-2 gap-8 mb-16">
         <div>
           <img src={image} alt={name} className="h-full w-full object-cover" />
         </div>
@@ -30,7 +30,7 @@ function RoomDetails() {
         </div>
       </div>
 
-      <div className="max-w-6xl mx-auto flex">
+      <div className="flex">
         <DayPicker
           mode="range"
           disabled={[{ before: new Date() }]}
@@ -67,7 +67,7 @@ function RoomDetails() {
           <button className="btn-black">Start by selecting dates</button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

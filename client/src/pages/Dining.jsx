@@ -1,10 +1,10 @@
-import { rooms } from "../../public/data";
-import RoomCard from "../components/RoomCard";
+import { dining } from "../../public/data";
+import DiningCard from "../components/DiningCard";
 
-function Rooms() {
+function Dining() {
   return (
     <div className="px-16 py-10 text-center space-y-6 ">
-      <h1 className="text-6xl uppercase font-serif">Villas</h1>
+      <h1 className="text-6xl uppercase font-serif">Dining</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
         corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos
@@ -17,15 +17,14 @@ function Rooms() {
         cupiditate dolorem velit sunt tenetur atque, ipsam voluptatum amet eius
         repellendus eos voluptas modi sequi ad aspernatur omnis sed quia.
       </p>
-      <div className="mt-14 max-w-6xl mx-auto">
-        <ul className="grid grid-cols-2 gap-20 ">
-          {rooms.map((room) => (
-            <RoomCard key={room.name} room={room} />
-          ))}
-        </ul>
-      </div>
+
+      <ul className="mt-14 max-w-4xl mx-auto">
+        {dining.map((item) => (
+          <DiningCard key={item.name} item={item} />
+        ))}
+      </ul>
     </div>
   );
 }
 
-export default Rooms;
+export default Dining;

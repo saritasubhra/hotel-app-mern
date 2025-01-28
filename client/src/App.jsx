@@ -5,6 +5,10 @@ import Login from "./pages/Login";
 import Rooms from "./pages/Rooms";
 import AppLayout from "./components/AppLayout";
 import RoomDetails from "./pages/RoomDetails";
+import Dining from "./pages/Dining";
+import Success from "./pages/Success";
+import Cancel from "./pages/Cancel";
+import PageNotFound from "./pages/PageNotFound";
 
 function App() {
   return (
@@ -14,8 +18,12 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/dining" element={<Dining />} />
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/rooms/:roomId" element={<RoomDetails />} />
+          <Route path="/purchase-success" element={<Success />} />
+          <Route path="/purchase-cancel" element={<Cancel />} />
+          <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>

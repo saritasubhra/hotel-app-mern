@@ -113,3 +113,42 @@ export const room = {
   capacity: 2,
   image: "/11.jpg",
 };
+
+export const dining = [
+  {
+    _id: "1",
+    name: "Orientale",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
+    type: "Asian",
+    open: "Open for breakfast, lunch and dinner",
+    image: "/Orientale.webp",
+  },
+  {
+    _id: "2",
+    name: "Arabian Grill",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
+    type: "Middle Eastern",
+    open: "Open for lunch and dinner",
+    image: "/arabian-grill.jpg",
+  },
+  {
+    _id: "3",
+    name: "Alba",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
+    type: "International",
+    open: "Open for breakfast, lunch and dinner",
+    image: "/Alba.webp",
+  },
+  {
+    _id: "4",
+    name: "Tuscano",
+    description:
+      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
+    type: "Italian",
+    open: "Open for dinner",
+    image: "/tuscano.jpg",
+  },
+];
