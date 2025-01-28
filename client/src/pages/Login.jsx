@@ -7,7 +7,7 @@ function Login() {
         <h1 className="text-3xl font-bold">Sign in to your account</h1>
 
         <div>
-          <label htmlFor="email" className="font-semibold text-sm">
+          <label htmlFor="email" className="label">
             Email
           </label>
           <input
@@ -20,7 +20,7 @@ function Login() {
         </div>
 
         <div>
-          <label htmlFor="password" className="font-semibold text-sm">
+          <label htmlFor="password" className="label">
             Password
           </label>
           <input

@@ -106,10 +106,10 @@ export const room = {
   _id: "1",
   name: "Garden Villa",
   description:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint dolores ex, sed optio soluta magni quibusdam quae doloribus mollitia! Dolore aliquam sapiente esse obcaecati ducimus consequatur vitae id architecto provident.Illum, repellendus laboriosam unde, cumque sapiente in doloremque odio, distinctio illo adipisci quasi odit. Architecto quisquam optio consectetur esse necessitatibus eius dolorum, ex dolores vero amet placeat, rerum laborum dignissimos?Repellendus harum id deleniti saepe molestias fugit illo sunt, vero expedita quo mollitia officia, distinctio minus non eius aspernatur, nam molestiae. Nam culpa cumque fuga voluptatum eligendi adipisci fugit itaque.",
+    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint dolores ex, sed optio soluta magni quibusdam quae doloribus mollitia! Dolore aliquam sapiente esse obcaecati ducimus consequatur vitae id architecto provident.Illum, repellendus laboriosam unde, cumque sapiente in doloremque odio, distinctio illo adipisci quasi odit. Architecto quisquam optio consectetur esse necessitatibus eius dolorum, ex dolores vero amet placeat, rerum laborum",
   price: 1199,
   area: "2206",
   bed: 1,
   capacity: 2,
-  image: "/1.jpg",
+  image: "/11.jpg",
 };

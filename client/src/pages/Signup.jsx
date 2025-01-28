@@ -6,7 +6,7 @@ function Signup() {
       <form className="w-full space-y-4">
         <h1 className="text-3xl font-bold">Create your account</h1>
         <div>
-          <label htmlFor="fullname" className="font-semibold text-sm">
+          <label htmlFor="fullname" className="label">
             Full name
           </label>
           <input
@@ -19,7 +19,7 @@ function Signup() {
         </div>
 
         <div>
-          <label htmlFor="email" className="font-semibold text-sm">
+          <label htmlFor="email" className="label">
             Email
           </label>
           <input
@@ -32,7 +32,7 @@ function Signup() {
         </div>
 
         <div>
-          <label htmlFor="password" className="font-semibold text-sm">
+          <label htmlFor="password" className="label">
             Password
           </label>
           <input
@@ -45,7 +45,7 @@ function Signup() {
         </div>
 
         <div>
-          <label htmlFor="passwordConfirm" className="font-semibold text-sm">
+          <label htmlFor="passwordConfirm" className="label">
             Confirm Password
           </label>
           <input

@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { BedDouble, Scan, Users } from "lucide-react";
+import { Users } from "lucide-react";
 
 function RoomCard({ room }) {
-  const { _id, name, price, image, area, bed, capacity } = room;
+  const { _id, name, price, image, capacity } = room;
   return (
     <li className="flex flex-col shadow-2xl">
       <div className="h-[300px] w-full">
@@ -10,14 +10,7 @@ function RoomCard({ room }) {
       </div>
       <div className="text-left p-4 space-y-1">
         <p className="text-3xl font-serif">{name}</p>
-        <p>
-          <Scan className="mr-4 inline" size={20} />
-          {area} sq. ft.
-        </p>
-        <p>
-          <BedDouble className="mr-4 inline" size={20} />
-          {bed} king size bed{bed > 1 ? "s" : ""}
-        </p>
+
         <p className="border-b border-neutral-600 pb-4">
           <Users className="mr-4 inline" size={20} />
           fits upto {capacity} guests
@@ -30,9 +23,7 @@ function RoomCard({ room }) {
             /night
           </span>
           <Link to={`/rooms/${_id}`}>
-            <button className="bg-black hover:opacity-50 duration-300 cursor-pointer text-white font-semibold px-6 py-3 ">
-              View more
-            </button>
+            <button className="btn-black">View more</button>
           </Link>
         </div>
       </div>
