@@ -122,7 +122,7 @@ export const dining = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
     type: "Asian",
     open: "Open for breakfast, lunch and dinner",
-    image: "/Orientale.webp",
+    image: "/orientale.avif",
   },
   {
     _id: "2",
@@ -140,7 +140,7 @@ export const dining = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
     type: "International",
     open: "Open for breakfast, lunch and dinner",
-    image: "/Alba.webp",
+    image: "/Alba.avif",
   },
   {
     _id: "4",
@@ -149,6 +149,6 @@ export const dining = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
     type: "Italian",
     open: "Open for dinner",
-    image: "/tuscano.jpg",
+    image: "/tuscano.webp",
   },
 ];
