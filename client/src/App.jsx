@@ -9,10 +9,12 @@ import Dining from "./pages/Dining";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import PageNotFound from "./pages/PageNotFound";
+import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
       <Routes>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />

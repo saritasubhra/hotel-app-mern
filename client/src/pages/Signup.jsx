@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 function Signup() {
   return (
-    <div className="max-w-md mx-auto p-8 rounded-md shadow-2xl">
+    <div className="max-w-sm sm:max-w-md mx-auto p-8 rounded-md shadow-2xl">
       <form className="w-full space-y-4">
         <h1 className="text-3xl font-bold">Create your account</h1>
         <div>
@@ -71,7 +71,7 @@ function Signup() {
           to="/login"
           className="font-medium text-violet-400 hover:text-violet-500 hover:border-b"
         >
-          Sign in here
+          Log in
         </Link>
       </p>
     </div>

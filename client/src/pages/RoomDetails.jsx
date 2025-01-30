@@ -6,8 +6,8 @@ import "react-day-picker/dist/style.css";
 function RoomDetails() {
   const { name, price, image, capacity, bed, area, description } = room;
   return (
-    <div className="py-10 px-10 max-w-7xl mx-auto">
-      <div className=" grid grid-cols-2 gap-8 mb-16">
+    <div className="py-10 px-6 sm:px-10 max-w-7xl mx-auto">
+      <div className=" grid lg:grid-cols-2 gap-8 mb-16">
         <div>
           <img src={image} alt={name} className="h-full w-full object-cover" />
         </div>
@@ -30,11 +30,12 @@ function RoomDetails() {
         </div>
       </div>
 
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row gap-8 ">
         <DayPicker
           mode="range"
           disabled={[{ before: new Date() }]}
           numberOfMonths={2}
+          className="mx-auto"
           modifiersClassNames={{
             range_start: "bg-black text-white",
             range_end: "bg-black text-white ",
@@ -43,7 +44,7 @@ function RoomDetails() {
             disabled: "text-gray-300",
           }}
         />
-        <div className="flex-1 flex flex-col justify-between pl-8">
+        <div className="flex-1 flex flex-col justify-between ">
           <div>
             <label className="label">Number of Geusts</label>
             <select required name="guests" className="input">
@@ -57,12 +58,17 @@ function RoomDetails() {
 
           <div>
             <label className="label">Number of Nights</label>
-            <input type="text" value={5} className="input" />
+            <input type="text" value={5} className="input" disabled />
           </div>
 
           <div>
             <label className="label">Total Price</label>
-            <input type="text" value={price} className="input" />
+            <input
+              type="text"
+              value={price}
+              className="input disabled:opacity-60"
+              disabled
+            />
           </div>
           <button className="btn-black">Start by selecting dates</button>
         </div>

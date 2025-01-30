@@ -2,9 +2,9 @@ import { Link } from "react-router-dom";
 
 function Login() {
   return (
-    <div className="max-w-md mx-auto p-8 rounded-md shadow-2xl">
+    <div className="max-w-sm sm:max-w-md mx-auto p-8 rounded-md shadow-2xl">
       <form className="w-full space-y-4">
-        <h1 className="text-3xl font-bold">Sign in to your account</h1>
+        <h1 className="text-3xl font-bold">Log in to your account</h1>
 
         <div>
           <label htmlFor="email" className="label">
@@ -36,7 +36,7 @@ function Login() {
           type="submit"
           className="w-full font-semibold bg-violet-400 hover:bg-violet-500 duration-300 py-3 rounded-md text-white mt-2 cursor-pointer"
         >
-          Sign in
+          Log in
         </button>
       </form>
 
@@ -46,7 +46,7 @@ function Login() {
           to="/signup"
           className="font-medium text-violet-400 hover:text-violet-500 hover:border-b"
         >
-          Sign up now
+          Sign up
         </Link>
       </p>
     </div>

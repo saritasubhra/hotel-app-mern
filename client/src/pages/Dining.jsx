@@ -3,8 +3,8 @@ import DiningCard from "../components/DiningCard";
 
 function Dining() {
   return (
-    <div className="px-16 py-10 text-center space-y-6 ">
-      <h1 className="text-6xl uppercase font-serif">Dining</h1>
+    <div className="px-6 sm:px-16 py-10 text-center space-y-6 ">
+      <h1 className="text-5xl sm:text-6xl uppercase font-serif">Dining</h1>
       <p>
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus
         corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos

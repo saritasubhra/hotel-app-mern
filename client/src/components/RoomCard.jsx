@@ -5,7 +5,7 @@ function RoomCard({ room }) {
   const { _id, name, price, image, capacity } = room;
   return (
     <li className="flex flex-col shadow-2xl">
-      <div className="h-[300px] w-full">
+      <div className="h-[200px] sm:h-[300px] w-full">
         <img src={image} alt={name} className="w-full h-full object-cover" />
       </div>
       <div className="text-left p-4 space-y-1">
@@ -20,6 +20,7 @@ function RoomCard({ room }) {
             <span className="font-semibold text-2xl text-neutral-600">
               &#8377;.{price}.00
             </span>
+            <br />
             /night
           </span>
           <Link to={`/rooms/${_id}`}>

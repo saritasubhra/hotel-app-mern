@@ -1,17 +1,20 @@
 import ImageSlider from "../components/ImageSlider";
 import { Link } from "react-router-dom";
+
 import { dining } from "../../public/data";
 import { rooms } from "../../public/data";
 import Hero from "../components/Hero";
 
 function Home() {
   return (
-    <div className="space-y-32">
+    <div className="space-y-16 sm:space-y-32">
       <Hero />
 
-      <div className="px-24 text-center">
-        <h1 className="text-5xl font-serif pb-4">Discover Island Living</h1>
-        <p className="font-thin leading-7">
+      <div className="px-6 sm:px-24 text-center">
+        <h1 className="text-3xl sm:text-5xl font-serif pb-4">
+          Discover Island Living
+        </h1>
+        <p className="font-thin text-sm md:font-normal sm:leading-7">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
           blanditiis atque odit ad amet, enim aperiam dolor molestias? Aperiam
           quisquam sit architecto nam quam laudantium ad quia veniam, dolore
@@ -26,7 +29,7 @@ function Home() {
         </p>
       </div>
 
-      <div className="p-16 grid grid-cols-2 gap-8 bg-[#e9f1fa]">
+      <div className="p-6 md:p-16 grid lg:grid-cols-2 gap-8 bg-[#e9f1fa]">
         <div>
           <img
             src="./7.webp"
@@ -35,7 +38,7 @@ function Home() {
           />
         </div>
 
-        <div className="p-16 space-y-4">
+        <div className="py-6 lg:p-16 space-y-4">
           <h1 className="text-3xl font-serif">Rooms & Suites</h1>
           <p className="font-thin">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, error
@@ -53,11 +56,11 @@ function Home() {
 
       <ImageSlider data={rooms} />
 
-      <div className="px-24 text-center">
-        <h1 className="text-5xl font-serif pb-4">
+      <div className="px-6 sm:px-24 text-center">
+        <h1 className="text-3xl sm:text-5xl font-serif pb-4">
           Exclusive Dining Experience
         </h1>
-        <p className="font-thin leading-7">
+        <p className="font-thin text-sm md:font-normal sm:leading-7">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt
           blanditiis atque odit ad amet, enim aperiam dolor molestias? Aperiam
           quisquam sit architecto nam quam laudantium ad quia veniam, dolore
@@ -72,7 +75,7 @@ function Home() {
         </p>
       </div>
 
-      <div className="p-16 grid grid-cols-2 gap-8 bg-[#e9f1fa]">
+      <div className="p-6 md:p-16 grid lg:grid-cols-2 gap-8 bg-[#e9f1fa]">
         <div>
           <img
             src="./arabian-grill.jpg"
@@ -81,7 +84,7 @@ function Home() {
           />
         </div>
 
-        <div className="p-16 space-y-4">
+        <div className="py-6 lg:p-16 space-y-4">
           <h1 className="text-3xl font-serif">Dining</h1>
           <p className="font-thin">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sed, error

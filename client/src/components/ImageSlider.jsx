@@ -15,7 +15,7 @@ function ImageSlider({ data }) {
       <Slider {...settings}>
         {data.map((item, i) => (
           <div key={i} className="px-4">
-            <div className="h-[200px] sm:h-[400px] 2xl:h-[600px]">
+            <div className="h-[200px] sm:h-[400px] 2xl:h-[600px] cursor-grab">
               <img
                 src={item.image}
                 alt={item.name}

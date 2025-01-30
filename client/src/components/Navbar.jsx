@@ -1,8 +1,8 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Navbar() {
   return (
-    <header className="flex justify-between p-4">
+    <header className="flex justify-between px-8 py-4 fixed z-10 bg-white w-screen">
       <div>XXXXX</div>
       <ul className="flex gap-10">
         <NavLink to="/">
@@ -14,12 +14,12 @@ function Navbar() {
         <NavLink to="/dining">
           <li>Dining</li>
         </NavLink>
-        <Link to="/signup">
-          <button>Signup</button>
-        </Link>
-        <Link to="/login">
-          <button>Login</button>
-        </Link>
+        <NavLink to="/signup">
+          <li>Signup</li>
+        </NavLink>
+        <NavLink to="/login">
+          <li>Login</li>
+        </NavLink>
       </ul>
     </header>
   );

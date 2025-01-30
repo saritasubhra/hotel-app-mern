@@ -3,7 +3,7 @@ import { Clock } from "lucide-react";
 function DiningCard({ item }) {
   const { name, open, type, image, description } = item;
   return (
-    <div className=" grid grid-cols-2 gap-8 mb-16 text-left shadow-2xl">
+    <div className=" grid md:grid-cols-2 gap-2 md:gap-8 mb-16 text-left shadow-2xl">
       <div>
         <img src={image} alt={name} className="h-full w-full object-cover" />
       </div>
