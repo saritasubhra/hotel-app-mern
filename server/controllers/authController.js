@@ -9,7 +9,7 @@ const generateAndSendToken = (res, id) => {
     expiresIn: process.env.JWT_EXPIRES_IN,
   });
   res.cookie("jwt", token, {
-    maxAge: 90 * 24 * 60 * 60 * 1000,
+    maxAge: process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000,
     httpOnly: true,
     sameSite: "strict",
     secure: process.env.NODE_ENV !== "development",
@@ -18,11 +18,10 @@ const generateAndSendToken = (res, id) => {
 
 const signUp = async (req, res, next) => {
   try {
-    const { fullname, email, phone, password, passwordConfirm } = req.body;
+    const { fullname, email, password, passwordConfirm } = req.body;
     const newUser = await User.create({
       fullname,
       email,
-      phone,
       password,
       passwordConfirm,
     });
@@ -106,7 +105,7 @@ const logOut = (req, res) => {
   res.cookie("jwt", "", { maxAge: 0 });
   res.status(200).json({
     status: "success",
-    message: "logged out successfully",
+    message: "Logged out successfully",
   });
 };
 

@@ -8,7 +8,7 @@ export const rooms = [
     area: "2206",
     bed: 1,
     capacity: 2,
-    image: "/1.jpg",
+    image: "/room1.jpg",
   },
   {
     _id: "2",
@@ -18,7 +18,7 @@ export const rooms = [
     area: "1937",
     bed: 2,
     capacity: 2,
-    image: "/2.jpg",
+    image: "/room2.jpg",
   },
   {
     _id: "3",
@@ -28,7 +28,7 @@ export const rooms = [
     area: "2513",
     bed: 2,
     capacity: 4,
-    image: "/11.jpg",
+    image: "/room3.jpg",
   },
   {
     _id: "4",
@@ -38,7 +38,7 @@ export const rooms = [
     area: "2106",
     bed: 2,
     capacity: 4,
-    image: "/3.jpg",
+    image: "/room4.jpg",
   },
   {
     _id: "5",
@@ -48,7 +48,7 @@ export const rooms = [
     area: "3102",
     bed: 3,
     capacity: 6,
-    image: "/1.jpg",
+    image: "/room5.jpg",
   },
   {
     _id: "6",
@@ -58,7 +58,7 @@ export const rooms = [
     area: "3225",
     bed: 3,
     capacity: 6,
-    image: "/1.jpg",
+    image: "/room6.jpg",
   },
   {
     _id: "7",
@@ -68,7 +68,7 @@ export const rooms = [
     area: "3479",
     bed: 3,
     capacity: 8,
-    image: "/1.jpg",
+    image: "/room7.webp",
   },
   {
     _id: "8",
@@ -78,7 +78,7 @@ export const rooms = [
     area: "3362",
     bed: 3,
     capacity: 8,
-    image: "/1.jpg",
+    image: "/room8.avif",
   },
   {
     _id: "9",
@@ -88,7 +88,7 @@ export const rooms = [
     area: "4950",
     bed: 4,
     capacity: 10,
-    image: "/1.jpg",
+    image: "/room9.avif",
   },
   {
     _id: "10",
@@ -98,7 +98,7 @@ export const rooms = [
     area: "5703",
     bed: 4,
     capacity: 10,
-    image: "/1.jpg",
+    image: "/room10.avif",
   },
 ];
 

@@ -11,8 +11,9 @@ function Login() {
             Email
           </label>
           <input
-            id="email"
             type="email"
+            placeholder="johndoe@gmail.com"
+            id="email"
             name="email"
             required
             className="input"
@@ -24,18 +25,16 @@ function Login() {
             Password
           </label>
           <input
-            id="password"
             type="password"
+            placeholder="********"
+            id="password"
             name="password"
             required
             className="input"
           />
         </div>
 
-        <button
-          type="submit"
-          className="w-full font-semibold bg-violet-400 hover:bg-violet-500 duration-300 py-3 rounded-md text-white mt-2 cursor-pointer"
-        >
+        <button type="submit" className="btn-violet">
           Log in
         </button>
       </form>

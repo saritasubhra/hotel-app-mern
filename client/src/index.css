@@ -13,6 +13,9 @@
   .btn-white {
     @apply bg-white hover:opacity-50 duration-300 cursor-pointer text-black font-semibold px-6 py-3;
   }
+  .btn-violet {
+    @apply w-full font-semibold bg-violet-400 hover:bg-violet-500 duration-300 py-3 rounded-md text-white mt-2 cursor-pointer;
+  }
 }
 
 .active {

@@ -10,8 +10,9 @@ function Signup() {
             Full name
           </label>
           <input
-            id="fullname"
             type="text"
+            placeholder="John Doe"
+            id="fullname"
             name="fullname"
             required
             className="input"
@@ -23,9 +24,25 @@ function Signup() {
             Email
           </label>
           <input
-            id="email"
             type="email"
+            placeholder="johndoe@gmail.com"
+            id="email"
             name="email"
+            required
+            className="input"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="phone" className="label">
+            Phone
+          </label>
+          <input
+            type="tel"
+            pattern="[0-9]{10}"
+            placeholder="4242424242"
+            id="phone"
+            name="phone"
             required
             className="input"
           />
@@ -36,8 +53,9 @@ function Signup() {
             Password
           </label>
           <input
-            id="password"
             type="password"
+            placeholder="********"
+            id="password"
             name="password"
             required
             className="input"
@@ -49,18 +67,16 @@ function Signup() {
             Confirm Password
           </label>
           <input
-            id="passwordConfirm"
             type="password"
+            placeholder="********"
+            id="passwordConfirm"
             name="passwordConfirm"
             required
             className="input"
           />
         </div>
 
-        <button
-          type="submit"
-          className="w-full font-semibold bg-violet-400 hover:bg-violet-500 duration-300 py-3 rounded-md text-white mt-2 cursor-pointer"
-        >
+        <button type="submit" className="btn-violet">
           Create Account
         </button>
       </form>

@@ -32,7 +32,7 @@ function Home() {
       <div className="p-6 md:p-16 grid lg:grid-cols-2 gap-8 bg-[#e9f1fa]">
         <div>
           <img
-            src="./7.webp"
+            src="./room8.avif"
             alt="jnk"
             className="h-full w-full object-cover"
           />

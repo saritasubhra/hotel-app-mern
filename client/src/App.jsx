@@ -1,15 +1,16 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import ScrollToTop from "./components/ScrollToTop";
+import AppLayout from "./components/AppLayout";
 import Home from "./pages/Home";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 import Rooms from "./pages/Rooms";
-import AppLayout from "./components/AppLayout";
 import RoomDetails from "./pages/RoomDetails";
 import Dining from "./pages/Dining";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import PageNotFound from "./pages/PageNotFound";
-import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
@@ -28,6 +29,7 @@ function App() {
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>
+      <Toaster />
     </BrowserRouter>
   );
 }
