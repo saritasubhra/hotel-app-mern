@@ -34,7 +34,7 @@ const roomSchema = new mongoose.Schema(
       min: [1, "Capacity can't be less than 1."],
     },
     image: {
-      type: Number,
+      type: String,
       required: [true, "Image is a required field."],
     },
     unavailableDates: [],

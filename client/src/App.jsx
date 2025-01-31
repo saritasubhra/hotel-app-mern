@@ -12,6 +12,9 @@ import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import PageNotFound from "./pages/PageNotFound";
 import { useAuth } from "./context/AuthContext";
+import CreateRoom from "./pages/CreateRoom";
+import Bookings from "./pages/Bookings";
+import AdminLayout from "./components/AdminLayout";
 
 function App() {
   const { auth } = useAuth();
@@ -35,6 +38,11 @@ function App() {
           <Route path="/rooms/:roomId" element={<RoomDetails />} />
           <Route path="/purchase-success" element={<Success />} />
           <Route path="/purchase-cancel" element={<Cancel />} />
+          <Route path="/admin" element={<AdminLayout />}>
+            <Route index element={<Navigate replace to="create-room" />} />
+            <Route path="create-room" element={<CreateRoom />} />
+            <Route path="bookings" element={<Bookings />} />
+          </Route>
           <Route path="*" element={<PageNotFound />} />
         </Route>
       </Routes>

@@ -47,6 +47,8 @@ const createRoom = async (req, res, next) => {
       folder: "harmony",
     });
 
+    console.log(secure_url);
+
     if (!secure_url) {
       return next(new AppError("Failed to upload image"));
     }
