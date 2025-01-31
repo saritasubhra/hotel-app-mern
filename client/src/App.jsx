@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { Toaster } from "react-hot-toast";
 import ScrollToTop from "./components/ScrollToTop";
 import AppLayout from "./components/AppLayout";
@@ -11,16 +11,25 @@ import Dining from "./pages/Dining";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";
 import PageNotFound from "./pages/PageNotFound";
+import { useAuth } from "./context/AuthContext";
 
 function App() {
+  const { auth } = useAuth();
+
   return (
     <BrowserRouter>
       <ScrollToTop />
       <Routes>
         <Route element={<AppLayout />}>
           <Route path="/" element={<Home />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/login" element={<Login />} />
+          <Route
+            path="/signup"
+            element={auth ? <Navigate to="/" /> : <Signup />}
+          />
+          <Route
+            path="/login"
+            element={auth ? <Navigate to="/" /> : <Login />}
+          />
           <Route path="/dining" element={<Dining />} />
           <Route path="/rooms" element={<Rooms />} />
           <Route path="/rooms/:roomId" element={<RoomDetails />} />

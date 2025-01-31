@@ -1,27 +1,11 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import axios from "../lib/axios";
-import { toast } from "react-hot-toast";
-import { useState } from "react";
-import { Loader } from "lucide-react";
+import useLogout from "../hooks/useLogout";
 
 function Navbar() {
-  const { auth, setAuth } = useAuth();
-  const [isLoading, setIsLoading] = useState(false);
+  const { auth } = useAuth();
+  const { isLoading, handleLogout } = useLogout();
 
-  async function handleLogout() {
-    try {
-      setIsLoading(true);
-      const res = await axios.get("/auth/logout");
-      toast.success(res.data.message);
-      localStorage.removeItem("harmony");
-      setAuth(null);
-    } catch (error) {
-      toast.error(error.response.data.message);
-    } finally {
-      setIsLoading(false);
-    }
-  }
   return (
     <header className="flex justify-between px-8 py-4 fixed z-10 bg-white w-screen">
       <div>XXXXX</div>
@@ -41,11 +25,7 @@ function Navbar() {
             onClick={handleLogout}
             disabled={isLoading}
           >
-            {isLoading ? (
-              <Loader color="#ffffff" className="animate-spin mx-auto" />
-            ) : (
-              "Log out"
-            )}
+            Log out
           </button>
         ) : (
           <>
