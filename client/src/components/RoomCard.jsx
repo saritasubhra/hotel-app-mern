@@ -2,14 +2,18 @@ import { Link } from "react-router-dom";
 import { Users } from "lucide-react";
 
 function RoomCard({ room }) {
-  const { _id, name, price, image, capacity } = room;
+  const { _id, roomname, price, image, capacity } = room;
   return (
     <li className="flex flex-col shadow-2xl">
       <div className="h-[200px] sm:h-[300px] w-full">
-        <img src={image} alt={name} className="w-full h-full object-cover" />
+        <img
+          src={image}
+          alt={roomname}
+          className="w-full h-full object-cover"
+        />
       </div>
       <div className="text-left p-4 space-y-1">
-        <p className="text-3xl font-serif">{name}</p>
+        <p className="text-3xl font-serif">{roomname}</p>
 
         <p className="border-b border-neutral-600 pb-4">
           <Users className="mr-4 inline" size={20} />

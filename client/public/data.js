@@ -1,7 +1,7 @@
 export const rooms = [
   {
     _id: "1",
-    name: "Garden Villa",
+    roomname: "Garden Villa",
     description:
       "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint dolores ex, sed optio soluta magni quibusdam quae doloribus mollitia! Dolore aliquam sapiente esse obcaecati ducimus consequatur vitae id architecto provident.Illum, repellendus laboriosam unde, cumque sapiente in doloremque odio, distinctio illo adipisci quasi odit. Architecto quisquam optio consectetur esse necessitatibus eius dolorum, ex dolores vero amet placeat, rerum laborum dignissimos?Repellendus harum id deleniti saepe molestias fugit illo sunt, vero expedita quo mollitia officia, distinctio minus non eius aspernatur, nam molestiae. Nam culpa cumque fuga voluptatum eligendi adipisci fugit itaque.",
     price: 1199,
@@ -12,7 +12,7 @@ export const rooms = [
   },
   {
     _id: "2",
-    name: "Overwater Villa",
+    roomname: "Overwater Villa",
     description: "",
     price: 1299,
     area: "1937",
@@ -22,7 +22,7 @@ export const rooms = [
   },
   {
     _id: "3",
-    name: "Beach Villa",
+    roomname: "Beach Villa",
     description: "",
     price: 1399,
     area: "2513",
@@ -32,7 +32,7 @@ export const rooms = [
   },
   {
     _id: "4",
-    name: "Sunset Overwater Villa",
+    roomname: "Sunset Overwater Villa",
     description: "",
     price: 1399,
     area: "2106",
@@ -42,7 +42,7 @@ export const rooms = [
   },
   {
     _id: "5",
-    name: "Lagoon Villa",
+    roomname: "Lagoon Villa",
     description: "",
     price: 1500,
     area: "3102",
@@ -52,7 +52,7 @@ export const rooms = [
   },
   {
     _id: "6",
-    name: "Ocean Pool Villa",
+    roomname: "Ocean Pool Villa",
     description: "",
     price: 1500,
     area: "3225",
@@ -62,7 +62,7 @@ export const rooms = [
   },
   {
     _id: "7",
-    name: "Private Pool Villa",
+    roomname: "Private Pool Villa",
     description: "",
     price: 1899,
     area: "3479",
@@ -72,7 +72,7 @@ export const rooms = [
   },
   {
     _id: "8",
-    name: "Beach Pool Villa",
+    roomname: "Beach Pool Villa",
     description: "",
     price: 1799,
     area: "3362",
@@ -82,7 +82,7 @@ export const rooms = [
   },
   {
     _id: "9",
-    name: "Two Bedroom Ocean Villa",
+    roomname: "Two Bedroom Ocean Villa",
     description: "",
     price: 2199,
     area: "4950",
@@ -92,7 +92,7 @@ export const rooms = [
   },
   {
     _id: "10",
-    name: "Two Bedroom Sunset Villa",
+    roomname: "Two Bedroom Sunset Villa",
     description: "",
     price: 2299,
     area: "5703",
@@ -104,7 +104,7 @@ export const rooms = [
 
 export const room = {
   _id: "1",
-  name: "Garden Villa",
+  roomname: "Garden Villa",
   description:
     "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint dolores ex, sed optio soluta magni quibusdam quae doloribus mollitia! Dolore aliquam sapiente esse obcaecati ducimus consequatur vitae id architecto provident.Illum, repellendus laboriosam unde, cumque sapiente in doloremque odio, distinctio illo adipisci quasi odit. Architecto quisquam optio consectetur esse necessitatibus eius dolorum, ex dolores vero amet placeat, rerum laborum",
   price: 1199,

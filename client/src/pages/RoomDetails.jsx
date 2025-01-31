@@ -4,16 +4,20 @@ import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 
 function RoomDetails() {
-  const { name, price, image, capacity, bed, area, description } = room;
+  const { roomname, price, image, capacity, bed, area, description } = room;
   return (
     <div className="py-10 px-6 sm:px-10 max-w-7xl mx-auto">
       <div className=" grid lg:grid-cols-2 gap-8 mb-16">
         <div>
-          <img src={image} alt={name} className="h-full w-full object-cover" />
+          <img
+            src={image}
+            alt={roomname}
+            className="h-full w-full object-cover"
+          />
         </div>
 
         <div className="p-8 space-y-2">
-          <h1 className="text-5xl font-serif">{name}</h1>
+          <h1 className="text-5xl font-serif">{roomname}</h1>
           <p className="font-thin">{description}</p>
           <p>
             <Scan className="mr-4 inline" size={20} />

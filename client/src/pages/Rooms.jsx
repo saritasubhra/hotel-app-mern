@@ -20,7 +20,7 @@ function Rooms() {
       <div className="mt-14 max-w-6xl mx-auto">
         <ul className="grid lg:grid-cols-2 gap-20 md:px-32 lg:px-0">
           {rooms.map((room) => (
-            <RoomCard key={room.name} room={room} />
+            <RoomCard key={room.roomname} room={room} />
           ))}
         </ul>
       </div>
