@@ -111,7 +111,7 @@ export const room = {
   area: "2206",
   bed: 1,
   capacity: 2,
-  image: "/11.jpg",
+  image: "/room1.jpg",
 };
 
 export const dining = [

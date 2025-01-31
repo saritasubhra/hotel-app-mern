@@ -1,9 +1,14 @@
 import { Link } from "react-router-dom";
+import { Loader } from "lucide-react";
+import useSignup from "../hooks/useSignup";
 
 function Signup() {
+  const { formData, isLoading, handleFormData, handleFormSubmission } =
+    useSignup();
+
   return (
     <div className="max-w-sm sm:max-w-md mx-auto p-8 rounded-md shadow-2xl">
-      <form className="w-full space-y-4">
+      <form className="w-full space-y-4" onSubmit={handleFormSubmission}>
         <h1 className="text-3xl font-bold">Create your account</h1>
         <div>
           <label htmlFor="fullname" className="label">
@@ -16,6 +21,8 @@ function Signup() {
             name="fullname"
             required
             className="input"
+            value={formData.fullname}
+            onChange={handleFormData}
           />
         </div>
 
@@ -30,21 +37,8 @@ function Signup() {
             name="email"
             required
             className="input"
-          />
-        </div>
-
-        <div>
-          <label htmlFor="phone" className="label">
-            Phone
-          </label>
-          <input
-            type="tel"
-            pattern="[0-9]{10}"
-            placeholder="4242424242"
-            id="phone"
-            name="phone"
-            required
-            className="input"
+            value={formData.email}
+            onChange={handleFormData}
           />
         </div>
 
@@ -59,6 +53,8 @@ function Signup() {
             name="password"
             required
             className="input"
+            value={formData.password}
+            onChange={handleFormData}
           />
         </div>
 
@@ -73,11 +69,17 @@ function Signup() {
             name="passwordConfirm"
             required
             className="input"
+            value={formData.passwordConfirm}
+            onChange={handleFormData}
           />
         </div>
 
-        <button type="submit" className="btn-violet">
-          Create Account
+        <button type="submit" className="btn-violet" disabled={isLoading}>
+          {isLoading ? (
+            <Loader color="#ffffff" className="animate-spin mx-auto" />
+          ) : (
+            "Create Account"
+          )}
         </button>
       </form>
 

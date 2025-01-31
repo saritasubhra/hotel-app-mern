@@ -1,9 +1,13 @@
+import { Loader } from "lucide-react";
 import { Link } from "react-router-dom";
+import useLogin from "../hooks/useLogin";
 
 function Login() {
+  const { formData, isLoading, handleFormData, handleFormSubmission } =
+    useLogin();
   return (
     <div className="max-w-sm sm:max-w-md mx-auto p-8 rounded-md shadow-2xl">
-      <form className="w-full space-y-4">
+      <form className="w-full space-y-4" onSubmit={handleFormSubmission}>
         <h1 className="text-3xl font-bold">Log in to your account</h1>
 
         <div>
@@ -17,6 +21,8 @@ function Login() {
             name="email"
             required
             className="input"
+            value={formData.email}
+            onChange={handleFormData}
           />
         </div>
 
@@ -31,11 +37,17 @@ function Login() {
             name="password"
             required
             className="input"
+            value={formData.password}
+            onChange={handleFormData}
           />
         </div>
 
-        <button type="submit" className="btn-violet">
-          Log in
+        <button type="submit" className="btn-violet" disabled={isLoading}>
+          {isLoading ? (
+            <Loader color="#ffffff" className="animate-spin mx-auto" />
+          ) : (
+            "Log in"
+          )}
         </button>
       </form>
 
