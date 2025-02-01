@@ -17,6 +17,8 @@ function useCreateRoom() {
   const [isLoading, setIsLoading] = useState(false);
 
   function handleFormData(e) {
+    console.log(e);
+
     setFormData((prev) => {
       return { ...prev, [e.target.name]: e.target.value };
     });

@@ -86,6 +86,7 @@ function CreateRoom() {
               value={formData.bed}
               onChange={handleFormData}
             >
+              <option value="">Select...</option>
               <option value={1}>1</option>
               <option value={2}>2</option>
               <option value={3}>3</option>
@@ -105,6 +106,7 @@ function CreateRoom() {
               value={formData.capacity}
               onChange={handleFormData}
             >
+              <option value="">Select...</option>
               {Array.from({ length: 12 }, (_, i) => i + 1).map((x) => (
                 <option key={x} value={x}>
                   {x}
@@ -127,7 +129,6 @@ function CreateRoom() {
             name="image"
             required
             className="input"
-            value={formData.image}
             onChange={handleImageChange}
           />
         </div>
