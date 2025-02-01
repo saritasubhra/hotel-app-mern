@@ -13,7 +13,7 @@ function RoomCard({ room }) {
         />
       </div>
       <div className="text-left p-4 space-y-1">
-        <p className="text-3xl font-serif">{roomname}</p>
+        <p className="text-3xl font-serif capitalize">{roomname}</p>
 
         <p className="border-b border-neutral-600 pb-4">
           <Users className="mr-4 inline" size={20} />

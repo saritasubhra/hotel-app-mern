@@ -1,12 +1,18 @@
 import { BedDouble, Scan, Users } from "lucide-react";
-import { room } from "../../public/data";
+// import { room } from "../../public/data";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
+import useRoomDetails from "../hooks/useRoomDetails";
+import Spinner from "../components/Spinner";
 
 function RoomDetails() {
+  const { room } = useRoomDetails();
+
+  if (!room) return <Spinner />;
+
   const { roomname, price, image, capacity, bed, area, description } = room;
   return (
-    <div className="py-10 px-6 sm:px-10 max-w-7xl mx-auto">
+    <div className="py-10 px-6 sm:px-16 max-w-7xl mx-auto">
       <div className=" grid lg:grid-cols-2 gap-8 mb-16">
         <div>
           <img
@@ -16,8 +22,8 @@ function RoomDetails() {
           />
         </div>
 
-        <div className="p-8 space-y-2">
-          <h1 className="text-5xl font-serif">{roomname}</h1>
+        <div className="p-4 space-y-2">
+          <h1 className="text-5xl font-serif capitalize">{roomname}</h1>
           <p className="font-thin">{description}</p>
           <p>
             <Scan className="mr-4 inline" size={20} />

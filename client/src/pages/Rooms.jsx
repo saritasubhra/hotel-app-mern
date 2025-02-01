@@ -1,7 +1,13 @@
-import { rooms } from "../../public/data";
+// import { rooms } from "../../public/data";
 import RoomCard from "../components/RoomCard";
+import Spinner from "../components/Spinner";
+import useRooms from "../hooks/useRooms";
 
 function Rooms() {
+  const { rooms } = useRooms();
+
+  if (!rooms.length) return <Spinner />;
+
   return (
     <div className="px-6 sm:px-16 py-10 text-center space-y-6 ">
       <h1 className="text-5xl sm:text-6xl uppercase font-serif">Villas</h1>

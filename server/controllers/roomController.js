@@ -5,7 +5,7 @@ const cloudinary = require("../lib/cloudinary");
 
 const getAllRooms = async (req, res, next) => {
   try {
-    const rooms = await Room.find();
+    const rooms = await Room.find().select("roomname image capacity price");
 
     if (!rooms) {
       return next(new AppError("No rooms found", 404));
@@ -46,8 +46,6 @@ const createRoom = async (req, res, next) => {
     const { secure_url } = await cloudinary.uploader.upload(image, {
       folder: "harmony",
     });
-
-    console.log(secure_url);
 
     if (!secure_url) {
       return next(new AppError("Failed to upload image"));

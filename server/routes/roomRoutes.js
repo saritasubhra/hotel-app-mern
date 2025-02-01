@@ -10,6 +10,6 @@ const {
 const router = express.Router();
 
 router.route("/").post(createRoom).get(getAllRooms);
-router.route("/roomId").get(getRoom).patch(updateRoom).delete(deleteRoom);
+router.route("/:roomId").get(getRoom).patch(updateRoom).delete(deleteRoom);
 
 module.exports = router;
