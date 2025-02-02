@@ -10,6 +10,7 @@ const xss = require("xss-clean");
 const userRouter = require("./routes/userRoutes");
 const authRouter = require("./routes/authRoutes");
 const roomRouter = require("./routes/roomRoutes");
+const bookingRouter = require("./routes/bookingRoutes");
 
 const globalErrorHandler = require("./controllers/errorController");
 const AppError = require("./utils/appError");
@@ -43,6 +44,7 @@ app.use(xss());
 app.use("/api/auth", authRouter);
 app.use("/api/users", userRouter);
 app.use("/api/rooms", roomRouter);
+app.use("/api/bookings", bookingRouter);
 
 app.all("*", (req, res, next) => {
   next(new AppError(`This route ${req.originalUrl} doesn't exist.`, 404));
