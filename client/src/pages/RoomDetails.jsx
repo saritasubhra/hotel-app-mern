@@ -4,9 +4,16 @@ import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import useRoomDetails from "../hooks/useRoomDetails";
 import Spinner from "../components/Spinner";
+import { useBooking } from "../context/BookingContext";
+import { differenceInDays } from "date-fns";
+import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
 
 function RoomDetails() {
+  const { auth } = useAuth();
   const { room } = useRoomDetails();
+  const { dates, setDates, guests, setGuests } = useBooking();
+  const numNights = differenceInDays(dates.to, dates.from) || 0;
 
   if (!room) return <Spinner />;
 
@@ -43,6 +50,8 @@ function RoomDetails() {
       <div className="flex flex-col lg:flex-row gap-8 ">
         <DayPicker
           mode="range"
+          selected={dates}
+          onSelect={setDates}
           disabled={[{ before: new Date() }]}
           numberOfMonths={2}
           className="mx-auto"
@@ -57,7 +66,14 @@ function RoomDetails() {
         <div className="flex-1 flex flex-col justify-between ">
           <div>
             <label className="label">Number of Geusts</label>
-            <select required name="guests" className="input">
+            <select
+              required
+              name="guests"
+              className="input"
+              value={guests}
+              onChange={(e) => setGuests(e.target.value)}
+            >
+              <option value="">Select...</option>
               {Array.from({ length: capacity }, (_, i) => i + 1).map((x) => (
                 <option key={x} value={x}>
                   {x}
@@ -68,19 +84,28 @@ function RoomDetails() {
 
           <div>
             <label className="label">Number of Nights</label>
-            <input type="text" value={5} className="input" disabled />
+            <input type="text" value={numNights} className="input" disabled />
           </div>
 
           <div>
             <label className="label">Total Price</label>
             <input
               type="text"
-              value={price}
+              value={numNights * price}
               className="input disabled:opacity-60"
               disabled
             />
           </div>
-          <button className="btn-black">Start by selecting dates</button>
+
+          {auth ? (
+            <button className="btn-black" disabled={!numNights || !guests}>
+              Book Now
+            </button>
+          ) : (
+            <Link to="/login">
+              <button className="btn-black w-full">Log in</button>
+            </Link>
+          )}
         </div>
       </div>
     </div>
