@@ -12,7 +12,6 @@ function useRoomDetails() {
     async function fecthRoom() {
       try {
         const res = await axios.get(`/rooms/${roomId}`);
-        console.log(res);
         setRoom(res.data.data);
       } catch (error) {
         toast.error(error.response.data.message);

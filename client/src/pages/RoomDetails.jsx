@@ -8,12 +8,43 @@ import { useBooking } from "../context/BookingContext";
 import { differenceInDays } from "date-fns";
 import { useAuth } from "../context/AuthContext";
 import { Link } from "react-router-dom";
+import { toast } from "react-hot-toast";
+import axios from "../lib/axios";
+import { loadStripe } from "@stripe/stripe-js";
 
 function RoomDetails() {
   const { auth } = useAuth();
   const { room } = useRoomDetails();
   const { dates, setDates, guests, setGuests } = useBooking();
   const numNights = differenceInDays(dates.to, dates.from) || 0;
+
+  async function handlePayment() {
+    try {
+      const stripe = await loadStripe(
+        "pk_test_51QlSLwAMfyPn5mSD9uda0oPDCy4mntTXZXM186RB9fSQZ7NY4cDmBx0ZZ6MDnqV1iOZ85stHDM290vI6TIQQkwvQ00npTGFTZE"
+      );
+
+      const product = {
+        roomId: room._id,
+        roomname,
+        image,
+        checkInDate: dates.from,
+        checkOutDate: dates.to,
+        guests,
+        totalAmount: price * numNights,
+      };
+
+      const res = await axios.post("/bookings/create-checkout-session", {
+        product,
+      });
+
+      await stripe.redirectToCheckout({
+        sessionId: res.data.session.id,
+      });
+    } catch (error) {
+      toast.error(error.response.data.message);
+    }
+  }
 
   if (!room) return <Spinner />;
 
@@ -98,7 +129,11 @@ function RoomDetails() {
           </div>
 
           {auth ? (
-            <button className="btn-black" disabled={!numNights || !guests}>
+            <button
+              className="btn-black"
+              disabled={!numNights || !guests}
+              onClick={handlePayment}
+            >
               Book Now
             </button>
           ) : (

@@ -1,6 +1,7 @@
 const AppError = require("../utils/appError");
 
 const globalErrorHandler = (err, req, res, next) => {
+  console.log(err);
   err.status = err.status || "error";
   err.statusCode = err.statusCode || 500;
 
@@ -9,7 +10,10 @@ const globalErrorHandler = (err, req, res, next) => {
     err = new AppError(message, 400);
   }
   if (err.code === 11000) {
-    const field = err.keyValue.name || err.keyValue.email;
+    const field =
+      err.keyValue.stripeSessionId ||
+      err.keyValue.email ||
+      err.keyValue.roomname;
     err = new AppError(`Duplicate field value: ${field}`, 400);
   }
   if (err.name === "ValidationError") {
