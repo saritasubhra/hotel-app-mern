@@ -29,7 +29,7 @@ function Home() {
         </p>
       </div>
 
-      <div className="p-6 md:p-16 grid lg:grid-cols-2 gap-8 bg-[#e9f1fa]">
+      <div className="p-6 md:p-16 grid lg:grid-cols-2 gap-8 bg-[#dcedff]">
         <div>
           <img
             src="./room8.avif"
@@ -75,7 +75,7 @@ function Home() {
         </p>
       </div>
 
-      <div className="p-6 md:p-16 grid lg:grid-cols-2 gap-8 bg-[#e9f1fa]">
+      <div className="p-6 md:p-16 grid lg:grid-cols-2 gap-8 bg-[#dcedff]">
         <div>
           <img
             src="./arabian-grill.jpg"

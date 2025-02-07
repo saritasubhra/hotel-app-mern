@@ -1,6 +1,20 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+const { addDays, isBefore } = require("date-fns");
 const Booking = require("../models/bookingModel");
 const AppError = require("../utils/appError");
+const Room = require("../models/roomModel");
+
+function getDatesInRange(startDate, endDate) {
+  const dates = [];
+  let currentDate = startDate;
+
+  while (isBefore(currentDate, endDate) || currentDate === endDate) {
+    dates.push(currentDate);
+    currentDate = addDays(currentDate, 1);
+  }
+
+  return dates;
+}
 
 const createCheckoutSession = async (req, res, next) => {
   try {
@@ -66,6 +80,10 @@ const checkoutSuccess = async (req, res, next) => {
 
     const { userId, roomId, checkInDate, checkOutDate, guests } =
       session.metadata;
+    console.log(session);
+    console.log(checkInDate);
+
+    const dates = getDatesInRange(checkInDate, checkOutDate);
 
     const newBooking = await Booking.create({
       stripeSessionId: sessionId,
@@ -77,8 +95,13 @@ const checkoutSuccess = async (req, res, next) => {
       totalAmount: session.amount_total / 100,
     });
 
-    res.status(201).json({
+    const room = await Room.findById(roomId);
+    room.unavailableDates.push(...dates);
+    await room.save({ validateBeforeSave: false });
+
+    await res.status(201).json({
       status: "success",
+      newBooking,
     });
   } catch (error) {
     next(error);

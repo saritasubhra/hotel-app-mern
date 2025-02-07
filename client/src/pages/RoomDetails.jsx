@@ -1,5 +1,4 @@
 import { BedDouble, Scan, Users } from "lucide-react";
-// import { room } from "../../public/data";
 import { DayPicker } from "react-day-picker";
 import "react-day-picker/dist/style.css";
 import useRoomDetails from "../hooks/useRoomDetails";
@@ -21,7 +20,7 @@ function RoomDetails() {
   async function handlePayment() {
     try {
       const stripe = await loadStripe(
-        "pk_test_51QlSLwAMfyPn5mSD9uda0oPDCy4mntTXZXM186RB9fSQZ7NY4cDmBx0ZZ6MDnqV1iOZ85stHDM290vI6TIQQkwvQ00npTGFTZE"
+        import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY
       );
 
       const product = {
@@ -48,7 +47,16 @@ function RoomDetails() {
 
   if (!room) return <Spinner />;
 
-  const { roomname, price, image, capacity, bed, area, description } = room;
+  const {
+    roomname,
+    price,
+    image,
+    capacity,
+    bed,
+    area,
+    description,
+    unavailableDates,
+  } = room;
   return (
     <div className="py-10 px-6 sm:px-16 max-w-7xl mx-auto">
       <div className=" grid lg:grid-cols-2 gap-8 mb-16">
@@ -83,7 +91,10 @@ function RoomDetails() {
           mode="range"
           selected={dates}
           onSelect={setDates}
-          disabled={[{ before: new Date() }]}
+          disabled={[
+            { before: new Date() },
+            ...unavailableDates.map((item) => new Date(item)),
+          ]}
           numberOfMonths={2}
           className="mx-auto"
           modifiersClassNames={{
