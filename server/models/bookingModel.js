@@ -44,6 +44,17 @@ const bookingSchema = new mongoose.Schema(
   }
 );
 
+bookingSchema.pre(/^find/, function (next) {
+  this.populate({
+    path: "userId",
+    select: "fullname",
+  }).populate({
+    path: "roomId",
+    select: "roomname",
+  });
+  next();
+});
+
 const Booking = mongoose.model("Booking", bookingSchema);
 
 module.exports = Booking;

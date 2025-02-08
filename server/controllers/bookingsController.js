@@ -108,4 +108,56 @@ const checkoutSuccess = async (req, res, next) => {
   }
 };
 
-module.exports = { createCheckoutSession, checkoutSuccess };
+const getAllBookings = async (req, res, next) => {
+  try {
+    const bookings = await Booking.find().select(
+      "checkInDate checkOutDate status"
+    );
+
+    if (!bookings) {
+      return next(new AppError("No bookings found", 404));
+    }
+
+    res.status(200).json({
+      status: "success",
+      results: bookings.length,
+      data: bookings,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+const updateBooking = async (req, res, next) => {
+  try {
+    console.log(req.body);
+
+    const booking = await Booking.findByIdAndUpdate(
+      req.params.bookingId,
+      req.body,
+      {
+        new: true,
+        runValidators: true,
+      }
+    );
+
+    if (!booking) {
+      return next(new AppError("No booking found with that ID", 404));
+    }
+
+    res.status(200).json({
+      status: "success",
+      message: "Booking updated successfully",
+      booking,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+module.exports = {
+  createCheckoutSession,
+  checkoutSuccess,
+  getAllBookings,
+  updateBooking,
+};

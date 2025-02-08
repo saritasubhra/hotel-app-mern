@@ -15,6 +15,7 @@ import { useAuth } from "./context/AuthContext";
 import CreateRoom from "./pages/CreateRoom";
 import Bookings from "./pages/Bookings";
 import AdminLayout from "./components/AdminLayout";
+import BookingDetails from "./pages/BookingDetails";
 
 function App() {
   const { auth } = useAuth();
@@ -42,6 +43,7 @@ function App() {
             <Route index element={<Navigate replace to="create-room" />} />
             <Route path="create-room" element={<CreateRoom />} />
             <Route path="bookings" element={<Bookings />} />
+            <Route path="bookings/:bookingId" element={<BookingDetails />} />
           </Route>
           <Route path="*" element={<PageNotFound />} />
         </Route>
