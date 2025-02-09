@@ -4,7 +4,6 @@ import useBookings from "../hooks/useBookings";
 
 function Bookings() {
   const { bookings } = useBookings();
-  console.log(bookings);
 
   if (!bookings.length) return <Spinner />;
   return (

@@ -10,7 +10,7 @@ function getDatesInRange(startDate, endDate) {
 
   while (isBefore(currentDate, endDate) || currentDate === endDate) {
     dates.push(currentDate);
-    currentDate = addDays(currentDate, 1);
+    currentDate = addDays(currentDate, 1).toISOString();
   }
 
   return dates;
@@ -80,10 +80,10 @@ const checkoutSuccess = async (req, res, next) => {
 
     const { userId, roomId, checkInDate, checkOutDate, guests } =
       session.metadata;
-    console.log(session);
-    console.log(checkInDate);
+    console.log("rhg", checkInDate, checkOutDate);
 
     const dates = getDatesInRange(checkInDate, checkOutDate);
+    console.log(dates);
 
     const newBooking = await Booking.create({
       stripeSessionId: sessionId,
@@ -128,13 +128,45 @@ const getAllBookings = async (req, res, next) => {
   }
 };
 
+const getBooking = async (req, res, next) => {
+  try {
+    console.log(req.params.bookingId);
+
+    const booking = await Booking.findById(req.params.bookingId).select(
+      "-stripeSessionId"
+    );
+
+    if (!booking) {
+      return next(new AppError("No booking found with that ID", 404));
+    }
+
+    res.status(200).json({
+      status: "success",
+      data: booking,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
 const updateBooking = async (req, res, next) => {
   try {
-    console.log(req.body);
+    const { status, checkInDate, checkOutDate, roomId } = req.body;
+
+    if (status === "checked-out") {
+      const dates = getDatesInRange(checkInDate, checkOutDate);
+      const room = await Room.findById(roomId);
+
+      room.unavailableDates = room.unavailableDates.filter(
+        (item) => !dates.includes(item)
+      );
+
+      await room.save({ validateBeforeSave: false });
+    }
 
     const booking = await Booking.findByIdAndUpdate(
       req.params.bookingId,
-      req.body,
+      { status },
       {
         new: true,
         runValidators: true,
@@ -148,7 +180,7 @@ const updateBooking = async (req, res, next) => {
     res.status(200).json({
       status: "success",
       message: "Booking updated successfully",
-      booking,
+      data: booking,
     });
   } catch (err) {
     next(err);
@@ -160,4 +192,5 @@ module.exports = {
   checkoutSuccess,
   getAllBookings,
   updateBooking,
+  getBooking,
 };

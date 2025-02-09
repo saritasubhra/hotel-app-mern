@@ -4,14 +4,17 @@ const {
   checkoutSuccess,
   getAllBookings,
   updateBooking,
+  getBooking,
 } = require("../controllers/bookingsController");
 const { protect } = require("../controllers/authController");
 
 const router = express.Router();
 
-router.route("/create-checkout-session").post(protect, createCheckoutSession);
-router.route("/checkout-success").post(protect, checkoutSuccess);
-router.route("/").get(protect, getAllBookings);
-router.route("/:bookingId").patch(protect, updateBooking);
+router.use(protect);
+
+router.route("/create-checkout-session").post(createCheckoutSession);
+router.route("/checkout-success").post(checkoutSuccess);
+router.route("/").get(getAllBookings);
+router.route("/:bookingId").get(getBooking).patch(updateBooking);
 
 module.exports = router;
