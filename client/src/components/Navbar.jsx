@@ -1,15 +1,18 @@
 import { NavLink } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 import useLogout from "../hooks/useLogout";
+import { Menu } from "lucide-react";
+import { useState } from "react";
 
 function Navbar() {
   const { auth } = useAuth();
   const { isLoading, handleLogout } = useLogout();
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <header className="flex justify-between px-8 py-4 fixed z-10 bg-white w-screen">
-      <div>XXXXX</div>
-      <ul className="flex items-center gap-10">
+      <div className="text-5xl">XXXXX</div>
+      <ul className={`${showMenu ? "nav-mobile" : "nav-desk"} `}>
         <NavLink to="/">
           <li>Overview</li>
         </NavLink>
@@ -38,6 +41,12 @@ function Navbar() {
           </>
         )}
       </ul>
+      <button
+        className="sm:hidden"
+        onClick={() => setShowMenu((prev) => !prev)}
+      >
+        <Menu />
+      </button>
     </header>
   );
 }

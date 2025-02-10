@@ -19,6 +19,13 @@
   .btn-violet-sm {
     @apply font-semibold bg-violet-400 hover:bg-violet-500 duration-300 py-2 px-4 rounded-md text-white mt-2 cursor-pointer;
   }
+
+  .nav-mobile {
+    @apply flex flex-col gap-4 py-4 items-center absolute left-0 top-20 bg-white w-full;
+  }
+  .nav-desk {
+    @apply hidden sm:flex sm:items-center sm:gap-10;
+  }
 }
 
 .active {
