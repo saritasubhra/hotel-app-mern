@@ -102,22 +102,10 @@ export const rooms = [
   },
 ];
 
-export const room = {
-  _id: "1",
-  roomname: "Garden Villa",
-  description:
-    "Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sint dolores ex, sed optio soluta magni quibusdam quae doloribus mollitia! Dolore aliquam sapiente esse obcaecati ducimus consequatur vitae id architecto provident.Illum, repellendus laboriosam unde, cumque sapiente in doloremque odio, distinctio illo adipisci quasi odit. Architecto quisquam optio consectetur esse necessitatibus eius dolorum, ex dolores vero amet placeat, rerum laborum.",
-  price: 1199,
-  area: "2206",
-  bed: 1,
-  capacity: 2,
-  image: "/room1.jpg",
-};
-
 export const dining = [
   {
     _id: "1",
-    name: "Orientale",
+    roomname: "Orientale",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
     type: "Asian",
@@ -126,7 +114,7 @@ export const dining = [
   },
   {
     _id: "2",
-    name: "Arabian Grill",
+    roomname: "Arabian Grill",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
     type: "Middle Eastern",
@@ -135,7 +123,7 @@ export const dining = [
   },
   {
     _id: "3",
-    name: "Alba",
+    roomname: "Alba",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
     type: "International",
@@ -144,7 +132,7 @@ export const dining = [
   },
   {
     _id: "4",
-    name: "Tuscano",
+    roomname: "Tuscano",
     description:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
     type: "Italian",

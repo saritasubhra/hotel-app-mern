@@ -25,6 +25,11 @@ function BookingDetails() {
     guests,
   } = booking;
 
+  let statusStyle;
+  if (status === "paid") statusStyle = "gray";
+  if (status === "checked-in") statusStyle = "green";
+  if (status === "checked-out") statusStyle = "blue";
+
   return (
     <div className="space-y-6 ">
       <h1 className="text-2xl font-semibold">BookingID: {_id}</h1>
@@ -71,11 +76,11 @@ function BookingDetails() {
           <option value="checked-out">Checked-out</option>
         </select>
       ) : (
-        <span className="text-2xl text-red-600">{status}</span>
+        <span className={statusStyle}>{status}</span>
       )}
       {status === "checked-out" ? null : isEditing ? (
         <>
-          <button className="btn-violet-sm mr-2" onClick={handleUpdate}>
+          <button className="btn-violet-sm mx-2" onClick={handleUpdate}>
             Update
           </button>
           <button className="btn-violet-sm" onClick={() => setIsEditing(false)}>
@@ -83,7 +88,10 @@ function BookingDetails() {
           </button>
         </>
       ) : (
-        <button className="btn-violet-sm" onClick={() => setIsEditing(true)}>
+        <button
+          className="btn-violet-sm mx-2"
+          onClick={() => setIsEditing(true)}
+        >
           Edit
         </button>
       )}

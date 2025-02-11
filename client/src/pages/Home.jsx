@@ -2,10 +2,14 @@ import ImageSlider from "../components/ImageSlider";
 import { Link } from "react-router-dom";
 
 import { dining } from "../../public/data";
-import { rooms } from "../../public/data";
 import Hero from "../components/Hero";
+import Spinner from "../components/Spinner";
+import useRooms from "../hooks/useRooms";
 
 function Home() {
+  const { rooms } = useRooms();
+
+  if (!rooms.length) return <Spinner />;
   return (
     <div className="space-y-16 sm:space-y-32">
       <Hero />

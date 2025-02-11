@@ -18,13 +18,13 @@ function ImageSlider({ data }) {
             <div className="h-[200px] sm:h-[400px] 2xl:h-[600px] cursor-grab">
               <img
                 src={item.image}
-                alt={item.name}
+                alt={item.roomname}
                 className="w-full h-full object-cover"
               />
             </div>
             <div>
-              <h3 className=" sm:text-2xl text-center font-serif pt-4">
-                {item.name}
+              <h3 className=" sm:text-2xl text-center font-serif pt-4 capitalize">
+                {item.roomname}
               </h3>
             </div>
           </div>

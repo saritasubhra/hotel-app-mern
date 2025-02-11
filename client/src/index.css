@@ -20,16 +20,26 @@
     @apply font-semibold bg-violet-400 hover:bg-violet-500 duration-300 py-2 px-4 rounded-md text-white mt-2 cursor-pointer;
   }
 
+  .gray {
+    @apply uppercase px-2 py-1 font-bold text-sm rounded-md bg-gray-300 text-gray-800;
+  }
+  .green {
+    @apply uppercase px-2 py-1 font-bold text-sm rounded-md bg-emerald-100 text-emerald-700;
+  }
+  .blue {
+    @apply uppercase px-2 py-1 font-bold text-sm rounded-md bg-cyan-100 text-cyan-700;
+  }
+
   .nav-mobile {
-    @apply flex flex-col gap-4 py-4 items-center absolute left-0 top-20 bg-white w-full;
+    @apply flex flex-col font-semibold gap-4 py-4 items-center absolute left-0 top-16 bg-white w-full;
   }
   .nav-desk {
-    @apply hidden sm:flex sm:items-center sm:gap-10;
+    @apply hidden font-semibold sm:flex sm:items-center sm:gap-10;
   }
 }
 
 .active {
   border-bottom: 3px solid #916e27;
-  padding-bottom: 5px;
+  padding-bottom: 3px;
   font-weight: 600;
 }

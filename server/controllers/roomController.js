@@ -44,7 +44,7 @@ const createRoom = async (req, res, next) => {
       req.body;
 
     const { secure_url } = await cloudinary.uploader.upload(image, {
-      folder: "harmony",
+      folder: "paradisePalms",
     });
 
     if (!secure_url) {

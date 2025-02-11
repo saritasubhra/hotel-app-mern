@@ -9,6 +9,12 @@ function BookingsRow({ booking }) {
     status,
     _id,
   } = booking;
+
+  let statusStyle;
+  if (status === "paid") statusStyle = "gray";
+  if (status === "checked-in") statusStyle = "green";
+  if (status === "checked-out") statusStyle = "blue";
+
   return (
     <div className="grid grid-cols-6 items-center capitalize py-2 text-center border-b border-stone-300">
       <div>{fullname}</div>
@@ -16,7 +22,7 @@ function BookingsRow({ booking }) {
       <div>{format(new Date(checkInDate), "dd-MM-yyyy")}</div>
       <div>{format(new Date(checkOutDate), "dd-MM-yyyy")}</div>
       <div>
-        <span>{status}</span>
+        <span className={statusStyle}>{status}</span>
       </div>
       <Link to={`/admin/bookings/${_id}`}>
         <button className="btn-violet-sm">See Details</button>

@@ -10,8 +10,16 @@ function Navbar() {
   const [showMenu, setShowMenu] = useState(false);
 
   return (
-    <header className="flex justify-between px-8 py-4 fixed z-10 bg-white w-screen">
-      <div className="text-5xl">XXXXX</div>
+    <header className="flex justify-between px-8 py-2 fixed z-10 bg-white w-screen">
+      <div>
+        <span className="text-lg font-serif leading-1 tracking-widest text-[#1e5631]">
+          Paradise
+        </span>
+        <br />
+        <span className="font-serif text-2xl leading-1 text-[#5c4033]">
+          Palms🌴
+        </span>
+      </div>
       <ul className={`${showMenu ? "nav-mobile" : "nav-desk"} `}>
         <NavLink to="/">
           <li>Overview</li>

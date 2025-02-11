@@ -33,7 +33,7 @@ function useSignup() {
       setIsLoading(true);
       const res = await axios.post("/auth/signup", formData);
       toast.success(res.data.message);
-      localStorage.setItem("harmony", JSON.stringify(res.data.data));
+      localStorage.setItem("paradisePalms", JSON.stringify(res.data.data));
       setAuth(res.data.data);
       setFormData(initialState);
       navigate("/rooms");

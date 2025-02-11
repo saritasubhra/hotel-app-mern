@@ -7,8 +7,8 @@ function Bookings() {
 
   if (!bookings.length) return <Spinner />;
   return (
-    <div>
-      <header className="grid grid-cols-6 text-center items-center uppercase font-bold mt-8">
+    <div className="min-w-[1024px] lg:overflow-x-hidden overflow-x-scroll">
+      <header className="grid grid-cols-6 text-center items-center uppercase font-bold mt-8 overflow-x-auto">
         <div>Name</div>
         <div>Room</div>
         <div>Arrival</div>
