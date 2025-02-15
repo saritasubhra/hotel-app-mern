@@ -11,8 +11,8 @@ const generateAndSendToken = (res, id) => {
   res.cookie("jwt", token, {
     maxAge: process.env.JWT_COOKIE_EXPIRES_IN * 24 * 60 * 60 * 1000,
     httpOnly: true,
-    sameSite: "strict",
-    secure: process.env.NODE_ENV !== "development",
+    sameSite: "None",
+    secure: true,
   });
 };
 
