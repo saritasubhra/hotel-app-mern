@@ -82,7 +82,7 @@ function Home() {
       <div className="p-6 md:p-16 grid lg:grid-cols-2 gap-8 bg-[#dcedff]">
         <div>
           <img
-            src="./arabian-grill.jpg"
+            src="./arabiangrill.jpg"
             alt="jnk"
             className="h-full w-full object-cover"
           />

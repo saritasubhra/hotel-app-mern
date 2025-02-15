@@ -119,7 +119,7 @@ export const dining = [
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus corrupti facere quidem ex et a ab, cumque qui consequuntur excepturi eos dolorum voluptatibus exercitationem, autem.",
     type: "Middle Eastern",
     open: "Open for lunch and dinner",
-    image: "/arabian-grill.jpg",
+    image: "/arabiangrill.jpg",
   },
   {
     _id: "3",
