@@ -12,7 +12,6 @@ function useRooms() {
   async function fecthAllRooms() {
     try {
       const res = await axios.get("/rooms");
-      console.log("called");
       setRooms(res.data.data);
     } catch (error) {
       toast.error(error.response.data.message);

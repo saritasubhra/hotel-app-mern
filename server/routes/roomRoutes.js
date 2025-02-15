@@ -15,7 +15,10 @@ router
   .post(protect, restrictTo("admin"), createRoom)
   .get(getAllRooms);
 
-router.use(protect, restrictTo("admin"));
-router.route("/:roomId").get(getRoom).patch(updateRoom).delete(deleteRoom);
+router
+  .route("/:roomId")
+  .get(getRoom)
+  .patch(protect, restrictTo("admin"), updateRoom)
+  .delete(protect, restrictTo("admin"), deleteRoom);
 
 module.exports = router;
