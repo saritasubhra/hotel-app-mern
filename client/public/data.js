@@ -1,4 +1,4 @@
-export const rooms = [
+export const roomsDetails = [
   {
     _id: "1",
     roomname: "Garden Villa",
@@ -98,6 +98,25 @@ export const rooms = [
     area: "5703",
     bed: 4,
     capacity: 10,
+    image: "/room10.avif",
+  },
+];
+
+export const rooms = [
+  {
+    roomname: "Garden Villa",
+    image: "/room1.jpg",
+  },
+  {
+    roomname: "Overwater Villa",
+    image: "/room2.jpg",
+  },
+  {
+    roomname: "Two Bedroom Ocean Villa",
+    image: "/room9.avif",
+  },
+  {
+    roomname: "Two Bedroom Sunset Villa",
     image: "/room10.avif",
   },
 ];
