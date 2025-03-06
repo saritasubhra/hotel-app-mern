@@ -16,7 +16,7 @@ function Login() {
           </label>
           <input
             type="email"
-            placeholder="johndoe@gmail.com"
+            placeholder="test1@gmail.com"
             id="email"
             name="email"
             required
@@ -32,7 +32,7 @@ function Login() {
           </label>
           <input
             type="password"
-            placeholder="********"
+            placeholder="12345678"
             id="password"
             name="password"
             required
