@@ -8,6 +8,10 @@ function Login() {
   return (
     <div className="max-w-sm sm:max-w-md mx-auto p-8 rounded-md shadow-2xl">
       <form className="w-full space-y-4" onSubmit={handleFormSubmission}>
+        <p className="text-red-600 font-bold text-xl">
+          Note: Please log in with the following credentials to see all the
+          features
+        </p>
         <h1 className="text-3xl font-bold">Log in to your account</h1>
 
         <div>

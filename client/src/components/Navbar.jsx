@@ -30,6 +30,11 @@ function Navbar() {
         <NavLink to="/dining">
           <li>Dining</li>
         </NavLink>
+        {auth?.role === "admin" && (
+          <NavLink to="/admin">
+            <li>Dashboard</li>
+          </NavLink>
+        )}
         {auth ? (
           <button
             className="btn-black"
